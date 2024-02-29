@@ -29,6 +29,13 @@ export default function Authenticated({ user, header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+
+                                <NavLink
+                                    href={route("admin.users.index")}
+                                    active={route().current("admin.users.index")}
+                                >
+                                    Users
+                                </NavLink>
                             </div>
                         </div>
 
@@ -60,21 +67,21 @@ export default function Authenticated({ user, header, children }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
-                                        {
-                                            user.role_id ? (
-                                                <Dropdown.Link
-                                                href={route("admin.profile.edit")}
+                                        {user.role_id ? (
+                                            <Dropdown.Link
+                                                href={route(
+                                                    "admin.profile.edit"
+                                                )}
                                             >
                                                 Profile
                                             </Dropdown.Link>
-                                            ) : (
-                                                <Dropdown.Link
+                                        ) : (
+                                            <Dropdown.Link
                                                 href={route("profile.edit")}
                                             >
                                                 Profile
                                             </Dropdown.Link>
-                                            )
-                                        }
+                                        )}
                                         {user.role_id ? (
                                             <Dropdown.Link
                                                 href={route("logout")}

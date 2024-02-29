@@ -1,6 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import WhoAreU from './WhoAreU';
+import Table from '../Components/Table';
 
 export default function Dashboard({ auth }) {
     // console.log(auth);
@@ -14,6 +15,7 @@ export default function Dashboard({ auth }) {
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <WhoAreU auth={auth}/>
+
                 </div>
             </div>
         </AuthenticatedLayout>
